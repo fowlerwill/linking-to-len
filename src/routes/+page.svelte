@@ -72,8 +72,9 @@
 			"Let's build a playground for the students of Don Bosco School! #LinkingToLen"
 		</p>
 
-		
-		<Input type="checkbox" label="I promise I have made a donation, and am ready to continue" bind:checked={stepOne} />
+		<div class="my-4 p-2 bg-body-tertiary border rounded-3">
+			<Input type="checkbox" label="I promise I have made a donation, and am ready to continue" bind:checked={stepOne} />
+		</div>
 
 		{#if stepOne}
 
@@ -93,9 +94,10 @@
 			media platform you like.
 		</p>
 
-
-		<Input type="checkbox" label="I promise I have shared this page, and am ready to continue" bind:checked={stepTwo} />
-
+		<div class="my-4 p-2 bg-body-tertiary border rounded-3">
+			<Input type="checkbox" label="I promise I have shared this page, and am ready to continue" bind:checked={stepTwo} />
+		</div>
+		
 		{/if}
 
 		{#if stepOne && stepTwo}
@@ -110,11 +112,11 @@
 		<div class="mx-auto">
 
 			<Button color="primary" size="lg" target="_blank" href={epub}>
-				Click here to download the eBook (epub)
+				Download (.epub)
 			</Button>
 			
 			<Button color="primary" size="lg" target="_blank" href={pdf}>
-				Click here to download the eBook (pdf)
+				Download (.pdf)
 			</Button>
 		</div>
 
