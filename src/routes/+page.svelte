@@ -36,19 +36,22 @@
 			ChatGPT, and some extensive editing from the parents.
 		</p>
 
-		<hr class="my-4" />
 
+
+		<div class="h-100 my-4 p-5 bg-body-tertiary border rounded-3">
+		
 		<h2 class="my-4">
-			How to help in a few simple steps:
+			How you can help in a three simple steps:
 		</h2>
-
+		
 		<ol class="my-4">
 			<li>Make a donation at the <a target="_blank" href={fundraiser}>fundraiser page</a>, then</li>
 			<li>Share this page with your friends and family, then</li>
 			<li>Download the eBook here, or order a printed copy</li>
 		</ol>
 
-		<hr class="my-4" />
+	</div>
+
 
 		<h2 class="my-4">
 			Ready?
