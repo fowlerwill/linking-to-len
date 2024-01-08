@@ -17,12 +17,12 @@
 </svelte:head>
 
 <section>
-	<Container sm class="py-5 mx-auto">
+	<Container sm class="py-5 mx-auto" style="max-width: 768px;">
 		<h1 class="display-5 fw-bold">
 			Linking to Len
 		</h1>
 		
-		<Image fluid src={cover} />
+		<Image fluid src={cover} style="width: 100%;" />
 
 		<h2 class="my-4">
 			A project by the students, parents, and teachers of Don Bosco to raise
