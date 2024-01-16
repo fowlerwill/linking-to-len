@@ -1,6 +1,9 @@
 <script>
 	import { Container, Image, Button, Input } from 'sveltestrap';
-	import cover from '$lib/images/cover.jpg';
+	import { browser } from '$app/environment';
+	
+	import coverTop from '$lib/images/cover_front-no-title.png';
+	import coverBottom from '$lib/images/cover_back.png';
 	
 	const epub = 'https://linking-to-len.s3.amazonaws.com/Linking_To_Len.epub';
 	const pdf = 'https://linking-to-len.s3.amazonaws.com/Linking_To_Len.pdf';
@@ -9,11 +12,23 @@
 
 	let stepOne = false;
 	let stepTwo = false;
+
+	import JSConfetti from 'js-confetti'
+	
+	function confetti() {
+		if (!browser) return;
+		const jsConfetti = new JSConfetti();
+		jsConfetti.addConfetti();
+	}
+
+
+	
 </script>
 
 <svelte:head>
 	<title>Linking To Len</title>
 	<meta name="description" content="Linking To Len" />
+	<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 </svelte:head>
 
 <section>
@@ -22,17 +37,17 @@
 			Linking to Len
 		</h1>
 		
-		<Image fluid src={cover} style="width: 100%;" />
+		<Image fluid src={coverTop} style="width: 100%;" />
 
 		<h2 class="my-4">
-			A project by the students, parents, and teachers of Don Bosco to raise
-			awareness for our playground fundraiser.
+			A project by the students, parents, and teachers of Don Bosco School to
+			raise awareness for our playground fundraiser.
 		</h2>
 
 		<p class="my-4">
 			We are raising money to build a playground for the students of Don Bosco 
 			School in Calgary. To help raise awareness, we have created a children's 
-			book with the artwork from the students themselves a sprinkle of text from
+			book with artwork created by the students themselves, a sprinkle of text from
 			ChatGPT, and some extensive editing from the parents.
 		</p>
 
@@ -66,13 +81,13 @@
 		</Button>
 
 		<p class="my-4">
-			When you make your donation, you will be asked to leave a message, you can
-			write whatever you like, but we suggest you write something like this:
-
-			"Let's build a playground for the students of Don Bosco School! #LinkingToLen"
+			When you make your donation, you will be asked to leave a message. You can
+			write whatever you like, but we suggest you write something to <i>...link</i> back to the book:
+			<br />
+			"Let's build a playground! #LinkingToLen"
 		</p>
 
-		<div class="my-4 p-2 bg-body-tertiary border rounded-3">
+		<div class="my-4 p-2 bg-body-tertiary border rounded-3" on:click={confetti}>
 			<Input type="checkbox" label="I promise I have made a donation, and am ready to continue" bind:checked={stepOne} />
 		</div>
 
@@ -84,17 +99,16 @@
 
 		<p class="my-4">
 			The best driver of donations is word of mouth. The more people who know
-			about this project, the more likely we are to reach our goal. So please 
-			share this page with your friends and family.
+			about this project, the more likely we are to reach our goal! So please 
+			share this page with your friends and family and ask them to do the same.
 		</p>
 
 		<p class="my-4">
-			You can share this page with your friends and family, and ask them to do the same.
-			using Facebook, Twitter, Instagram, TikTok, LinkedIn or any other social
-			media platform you like.
+			You can share this page using Facebook, Twitter, Instagram, TikTok, 
+			LinkedIn, or any other social media platform you like.
 		</p>
 
-		<div class="my-4 p-2 bg-body-tertiary border rounded-3">
+		<div class="my-4 p-2 bg-body-tertiary border rounded-3" on:click={confetti}>
 			<Input type="checkbox" label="I promise I have shared this page, and am ready to continue" bind:checked={stepTwo} />
 		</div>
 		
@@ -106,7 +120,7 @@
 		</h3>
 
 		<p class="my-4">
-			We have created an eBook of the book, which you can download for free here.
+			We have created a digital version, which you can download for free here 👇
 		</p>
 
 		<div class="mx-auto">
@@ -126,17 +140,18 @@
 
 		<p class="my-4">
 			We have also created a printed version of the book on Amazon that is being
-			sold for cost (we make no money from this, it is just to cover the cost of
-			printing and shipping).
+			sold at cost.
+		</p>
+
+		<p class="my-4">
+			We make no money from this, the cost only covers printing and shipping, so please make sure you've donated (you promised!).
 		</p>
 
 		<Button color="primary" size="lg" target="_blank" href={softcover}>
-			Softcover (Amazon)
+			Order (Amazon)
 		</Button>
 
-		<Button disabled={true} color="secondary" size="lg">
-			Hardcover (Coming Soon)
-		</Button>
+		<Image fluid src={coverBottom} style="width: 100%;" />
 
 		<p class="h1 my-5 text-center">
 			Thank you for your support!
