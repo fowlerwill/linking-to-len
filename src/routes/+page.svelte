@@ -7,7 +7,7 @@
 	
 	const epub = 'https://linking-to-len.s3.amazonaws.com/Linking_To_Len.epub';
 	const pdf = 'https://linking-to-len.s3.amazonaws.com/Linking_To_Len.pdf';
-	const fundraiser = 'https://www.justgiving.com/campaign/ccef-donboscoschool?utm_source=copyLink&utm_medium=one_page&utm_content=campaign/ccef-donboscoschool&utm_campaign=pfp-share&utm_term=ee727817bb294315b12147b6f77e2ff1';
+	const fundraiser = 'https://www.justgiving.com/campaign/ccef-donboscoschool?utm_source=linking_to_len';
 	const softcover = 'https://www.amazon.ca/dp/B0CR7W1BF3';
 
 	let stepOne = false;
